@@ -1,0 +1,19 @@
+./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=dhruv4096/companyms"
+ docker push dhruv4096/companyms
+
+./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=dhruv4096/jobms"
+ docker push dhruv4096/jobms
+
+./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=dhruv4096/reviewms"
+docker push dhruv4096/reviewms
+
+./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=dhruv4096/servicereg"
+docker push dhruv4096/servicereg
+
+./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=dhruv4096/config-serverms"
+docker push dhruv4096/config-serverms
+
+./mvnw spring-boot:build-image "-Dspring-boot.build-image.imageName=dhruv4096/gatewayms"
+docker push dhruv4096/gatewayms
+
+
