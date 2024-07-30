@@ -17,3 +17,34 @@ docker push dhruv4096/config-serverms
 docker push dhruv4096/gatewayms
 
 
+
+
+kubernetes commands:
+
+kubectl apply -f first-pod.yaml
+kubectl get pods
+kubectl get pods -w
+kubectl apply -f first-service.yaml
+kubectl get service
+kubectl apply -f replica-set.yaml
+kubectl get replicaset
+kubectl apply -f first-deployment.yaml
+kubectl get deployments
+kubectl apply -f .\services\postgres\
+kubectl exec -it postgres-0 -- psql -U embarkx
+kubectl delete services --all --all-namespaces
+minikube stop
+minikube start
+
+kubectl apply -f .\services\zipkin\
+minikube service zipkin --url
+
+kubectl apply -f .\services\rabbitmq\
+minikube service rabbitmq --url
+
+kubectl apply -f .\bootstrap\job\
+kubectl apply -f .\bootstrap\company\
+kubectl apply -f .\bootstrap\review\
+
+
+
