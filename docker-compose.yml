@@ -112,11 +112,11 @@ services:
     image: rabbitmq:3-management
     container_name: rabbitmq
     ports:
-      - 5672:5672
-      - 15672:15672
+      - 5672:5672    # RabbitMQ main port
+      - 15672:15672  # RabbitMQ management UI
     networks:
-      - postgres
       - microservice-network
+      - postgres      
 
   gatewayms:
     image:  dhruv4096/gatewayms:latest

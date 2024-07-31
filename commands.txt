@@ -17,6 +17,10 @@ docker push dhruv4096/config-serverms
 docker push dhruv4096/gatewayms
 
 
+docker network inspect 61cc92ade8e4
+docker compose down
+docker compose up -d
+
 
 
 kubernetes commands:
