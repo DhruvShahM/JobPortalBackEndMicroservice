@@ -36,9 +36,28 @@ kubectl apply -f first-deployment.yaml
 kubectl get deployments
 kubectl apply -f .\services\postgres\
 kubectl exec -it postgres-0 -- psql -U embarkx
+\q => For quite from the database
+\l=> list all the database
 kubectl delete services --all --all-namespaces
 minikube stop
 minikube start
+
+kubectl apply -f .\services\postgres\
+minikube postgres zipkin --url
+
+
+kubectl exec -it review-69f8dbc445-7ksrg -- ls /usr/local/app
+kubectl exec -it review-69f8dbc445-7ksrg -- tree
+kubectl exec -it review-69f8dbc445-7ksrg -- /bin/sh
+
+
+kubectl delete pod company-6698bb96f-js4tq
+kubectl delete pod review-69f8dbc445-7ksrg
+
+
+
+
+
 
 kubectl apply -f .\services\zipkin\
 minikube service zipkin --url
@@ -49,6 +68,16 @@ minikube service rabbitmq --url
 kubectl apply -f .\bootstrap\job\
 kubectl apply -f .\bootstrap\company\
 kubectl apply -f .\bootstrap\review\
+
+minikube service company --url
+minikube service review --url
+
+
+kubectl logs company-6698bb96f-mlbzn
+kubectl logs review-69f8dbc445-xbtjd
+
+minikube delete service company
+minikube delete service review
 
 
 
